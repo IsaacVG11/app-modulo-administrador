@@ -1,0 +1,26 @@
+es:
+  Controller:
+    created: Creado exitosamente
+    updated: Actualizado correctamente
+    destroyed: Eliminado correctamente
+  activerecord:
+    attributes:
+      User:
+        roles:
+          administrator: Administrador
+          chef: Cocinero
+      Dish:
+        dish_states:
+        enable: Habilitar
+        disable: Deshabilitar
+      Order:
+        order_states:
+          onTime: A tiempo
+          overTime: Sobre tiempo
+          late: Tarde
+          canceled: Cancelado
+          delivered: Entregado
+      Client:
+        client_states:
+          enable: Habilitar
+          disable: Deshabilitar
