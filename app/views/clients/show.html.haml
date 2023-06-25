@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Full name:
+  = @client.full_name
+%p
+  %b Address:
+  = @client.address
+%p
+  %b Email:
+  = @client.email
+%p
+  %b Password:
+  = @client.password
+
+= link_to 'Edit', edit_client_path(@client)
+\|
+= link_to 'Back', clients_path

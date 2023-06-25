@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Dish name:
+  = @dish.dish_name
+%p
+  %b Description:
+  = @dish.description
+%p
+  %b Dish image:
+  = @dish.dish_image
+
+= link_to 'Edit', edit_dish_path(@dish)
+\|
+= link_to 'Back', dishes_path

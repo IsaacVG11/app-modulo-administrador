@@ -1,0 +1,10 @@
+= form_for @dishxorder do |f|
+  - if @dishxorder.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dishxorder.errors.count, "error")} prohibited this dishxorder from being saved:"
+      %ul
+        - @dishxorder.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

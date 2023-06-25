@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Order time:
+  = @order.order_time
+%p
+  %b Order date:
+  = @order.order_date
+
+= link_to 'Edit', edit_order_path(@order)
+\|
+= link_to 'Back', orders_path

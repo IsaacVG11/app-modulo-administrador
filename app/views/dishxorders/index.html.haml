@@ -1,0 +1,19 @@
+%h1 Listing dishxorders
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @dishxorders.each do |dishxorder|
+      %tr
+        %td= link_to 'Show', dishxorder
+        %td= link_to 'Edit', edit_dishxorder_path(dishxorder)
+        %td= link_to 'Destroy', dishxorder, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Dishxorder', new_dishxorder_path
