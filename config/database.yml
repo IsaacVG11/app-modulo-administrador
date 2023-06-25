@@ -22,6 +22,7 @@ test:
 
 production:
   <<: *default
-  database: app_modulo_admi_production
-  username: app_modulo_admi
-  password: <%= ENV["BASE_PROJECT_2023_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  database: railwayapp_production
+  username: railwayapp
+  password: <%= ENV["RAILWAYAPP_DATABASE_PASSWORD"] %>
