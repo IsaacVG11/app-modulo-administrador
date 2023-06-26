@@ -6,6 +6,7 @@ ruby "3.2.0"
 #Gemas extra agregadas
 gem "bootstrap"
 gem "devise" 
+gem "font_awesome5_rails"
 gem "font-awesome-sass", "~> 6.4.0"
 gem "haml"
 gem "httparty"
