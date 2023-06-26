@@ -18,27 +18,22 @@ module Api
     def create
       @dish = Dish.new(dish_params)
       if @dish.save
-        #redirect_to dish_url(@dish), notice: t('Controller.created')
         render 'api/dishes/show', status: :created 
       else
-        #render :new, status: :unprocessable_entity 
         render json: @dish.errors, status: :unprocessable_entity 
       end
     end
 
     def update
       if @dish.update(dish_params)
-        #redirect_to dish_url(@dish), notice: t('Controller.updated') 
         render 'api/dishes/show', status: :ok
       else
-        #render :edit, status: :unprocessable_entity 
         render json: @dish.errors, status: :unprocessable_entity 
       end
     end
 
     def destroy
       @dish.destroy
-      #redirect_to dishes_url, notice: t('Controller.updated') 
       render 'api/dishes/show', status: :ok 
     end
 
