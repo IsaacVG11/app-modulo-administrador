@@ -1,0 +1,22 @@
+%h1 Listing clients
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Full name
+      %th Address
+      %th Email
+      %th Actions
+
+  %tbody
+    - @clients.each do |client|
+      %tr
+        %td= client.full_name
+        %td= client.address
+        %td= client.email
+        %td= client.client_state
+        %td
+          - if client.enable?
+            = link_to 'Disable', clientview_path(client), class: 'btn btn-danger mr-2'
+          - else
+            = link_to 'Enable', clientview_path(client), class: 'btn btn-primary mr-2'

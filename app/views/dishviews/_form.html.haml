@@ -1,0 +1,41 @@
+= form_for @dish, html: { multipart: true } do |f|
+  - if @dish.errors.any?
+    .card.mx-4
+      .card-body
+        %div{style: 'color: red'}
+          %h2
+            =t('application.can_not_be_saved')#Falta traduccion
+          %ul
+            - @dish.errors.each do |error|
+              %li= error.full_message
+
+  .form-group.mx-4
+    = f.label :dish_name, class: "form-label required"
+    .div.w-25 
+      = f.text_field :dish_name, autofocus: true, class: "form-control"
+  
+  .form-group.mx-4
+    = f.label :description, class: "form-label required"
+    .div.w-25 
+      = f.text_field :description, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :price, class: "form-label required"
+    .div.w-25 
+      = f.text_field :price, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :dish_image, class: "form-label required"
+    .div.w-25 
+      = f.file_field :dish_image, accept: 'image/*'
+
+  .form-group.mx-4
+    = f.label :dish_state, class: "form-label required"
+    .div.w-25 
+      = f.select(:dish_state, options_for_select(dish_states_helper, @dish.dish_state), {prompt: 'select'}, class: "form-control")
+
+  .row.mt-4
+    .offset-3.col-3
+      = link_to 'back', dishviews_path, class: "btn btn-secondary btn-block"
+    .col-3
+      = button_tag 'save', class: "btn btn-outline-success btn-block"

@@ -1,0 +1,21 @@
+.notice
+  %p#notice= notice
+
+%section
+  %h3 Full name:
+  %p= @client.full_name
+
+%section
+  %h3 Address:
+  %p= @client.address
+
+%section
+  %h3 Email:
+  %p= @client.email
+
+%section
+  %h3 State:
+  %p= @client.client_state
+
+%section.actions
+  = link_to 'Back', clientviews_path, class: 'btn btn-secondary'

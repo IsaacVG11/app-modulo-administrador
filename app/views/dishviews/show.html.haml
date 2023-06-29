@@ -1,0 +1,25 @@
+.notice
+  %p#notice= notice
+
+%section
+  %h3 Dish name:
+  %p= @dish.dish_name
+
+%section
+  %h3 Description:
+  %p= @dish.description
+
+%section
+  %h3 Price:
+  %p= @dish.price
+
+%section
+  %h3 Dish image:
+  %p= @dish.dish_image
+
+%section.actions
+  = link_to 'Back', dishviews_path, class: 'btn btn-secondary'
+  |
+  = link_to 'Edit', edit_dishview_path(@dish), class: 'btn btn-primary'
+  
+
