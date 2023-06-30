@@ -9,7 +9,6 @@ class DishviewsController < ApplicationController
     end
   end
   
-
   def show; end
 
   def new
@@ -20,9 +19,11 @@ class DishviewsController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    
-    @dish.dish_image = encode_image(params[:dish][:dish_image]) if params[:dish][:dish_image]
-
+  
+    if params[:dish][:dish_image].present?
+      @dish.dish_image = encode_image(params[:dish][:dish_image])
+    end
+  
     if @dish.save
       redirect_to dishview_path(@dish), notice: "Dish was successfully created."
     else
@@ -54,7 +55,8 @@ class DishviewsController < ApplicationController
   end
 
   def encode_image(image)
-    Base64.encode64(image.read)
+    base64_image = Base64.encode64(image.read)
+    "data:#{image.content_type};base64,#{base64_image}"
   end
 end
 

@@ -25,11 +25,18 @@ module Api
       end
     end
 
+    # En este controlador api de clients se maneja recibiendo un formato ya sea html o json porque 
+    # a la hora de que en la web modificamos el valor de client state este se redirigía a este controlador 
+    # y entraba en error aunque si ejecutaba la acción update por lo tanto el render lo hice desde acá 
     def update
-      if @client.update(client_params)
-        render 'api/clients/show', status: :ok
-      else
-        render json: @client.errors, status: :unprocessable_entity
+      respond_to do |format|
+        if @client.update(client_params)
+          format.html { redirect_to clientview_path(@client), notice: "Client was successfully updated." }
+          format.json { render 'api/clients/show', status: :ok }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @client.errors, status: :unprocessable_entity }
+        end
       end
     end
 

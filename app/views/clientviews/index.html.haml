@@ -15,8 +15,7 @@
         %td= client.address
         %td= client.email
         %td= client.client_state
-        %td
-          - if client.enable?
-            = link_to 'Disable', clientview_path(client), class: 'btn btn-danger mr-2'
-          - else
-            = link_to 'Enable', clientview_path(client), class: 'btn btn-primary mr-2'
+        %td= link_to 'Show', clientview_path(client), class: 'btn btn-primary'
+        %td= link_to 'Modify State', edit_clientview_path(client), class: 'btn btn-danger'
+
+%br

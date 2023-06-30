@@ -1,12 +1,24 @@
-%p#notice= notice
+.notice
+  %p#notice= notice
 
-%p
-  %b Order time:
-  = @order.order_time
-%p
-  %b Order date:
-  = @order.order_date
+%section
+  %h3 Client:
+  %p= @order.client.full_name
 
-= link_to 'Edit', edit_order_path(@order)
-\|
-= link_to 'Back', orders_path
+%section
+  %h3 Order Time:
+  %p= @order.order_time
+
+%section
+  %h3 Order Date:
+  %p= @order.order_date
+
+%section
+  %h3 Order State:
+  %p= @order.order_state
+
+%section.actions
+  = link_to 'Back', orderviews_path, class: 'btn btn-secondary'
+  |
+  = link_to 'Edit', edit_orderview_path(@order), class: 'btn btn-primary'
+  

@@ -19,28 +19,28 @@ module Api
       @order = Order.new(order_params)
     
       if @order.save
-        #redirect_to order_url(@order), notice: t('Controller.created') 
         render 'api/orders/show', status: :created
       else
-        #render :new, status: :unprocessable_entity 
         render json: @order.errors, status: :unprocessable_entity 
       end
     end
 
+    #Se le agrega el respond_to format para cuando en la pagina hagamos editemos un 
+    #estado de la orden y este entre a este controlador y luego lo redireccione al show de pagina web
     def update
+      respond_to do |format|
         if @order.update(order_params)
-          #redirect_to order_url(@order), notice: t('Controller.updated') 
-          render 'api/orders/show', status: :ok 
+          format.html { redirect_to orderview_path(@order), notice: "Order was successfully updated." }
+          format.json { render 'api/orders/show', status: :ok }
         else
-          #render :edit, status: :unprocessable_entity 
-          render json: @order.errors, status: :unprocessable_entity 
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @order.errors, status: :unprocessable_entity }
         end
+      end
     end
 
     def destroy
       @order.destroy
-
-      #redirect_to orders_url, notice: t('Controller.destroyed') 
       render 'api/orders/show', status: :ok
     end
 
