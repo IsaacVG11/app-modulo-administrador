@@ -6,8 +6,8 @@ es:
   activerecord:
     attributes:
       User:
-        roles:
-          administrator: Administrador
+        user_states:
+          admin: Administrador
           chef: Cocinero
       Dish:
         dish_states:

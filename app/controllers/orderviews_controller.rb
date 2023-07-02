@@ -13,11 +13,6 @@ class OrderviewsController < ApplicationController
       end_date = Date.parse(params[:end_date])
       @orders = @orders.where(order_date: start_date..end_date)
     end
-  
-    if params[:order_time].present?
-      order_time = Time.parse(params[:order_time])
-      @orders = @orders.where(order_time: order_time)
-    end
 
     if params[:order_state].present?
       @orders = @orders.where(order_state: params[:order_state])

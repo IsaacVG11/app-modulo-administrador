@@ -18,10 +18,6 @@
     = date_field_tag :end_date, params[:end_date], class: 'form-control'
 
   .form-group
-    = label_tag :order_time, 'Order Time'
-    = time_field_tag :order_time, params[:order_time], class: 'form-control'
-
-  .form-group
     = submit_tag 'Search', class: 'btn btn-primary'
 
 %table.table.table-striped

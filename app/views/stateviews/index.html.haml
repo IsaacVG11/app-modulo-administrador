@@ -1,0 +1,20 @@
+%h1 Time States
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th On Time
+      %th Over Time
+      %th Late
+      %th Actions
+
+  %tbody
+    - @states.each do |state|
+      %tr
+        %td= state.ontime
+        %td= state.overtime
+        %td= state.late
+        %td= link_to 'Show', stateview_path(state), class: 'btn btn-primary'
+        %td= link_to 'Modify Time State', edit_stateview_path(state), class: 'btn btn-danger'
+
+%br

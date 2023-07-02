@@ -1,0 +1,19 @@
+.notice
+  %p#notice= notice
+
+%section
+  %h3 On Time:
+  %p= @state.ontime
+
+%section
+  %h3 Over Time:
+  %p= @state.overtime
+
+%section
+  %h3 Late:
+  %p= @state.late
+
+%section.actions
+  = link_to 'Back', stateviews_path, class: 'btn btn-secondary'
+  |
+  = link_to 'Edit', edit_stateview_path(@state), class: 'btn btn-primary'
