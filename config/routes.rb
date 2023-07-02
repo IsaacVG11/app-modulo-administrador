@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :admins
-
   #Ruta para el devise
-  #devise_for :user_logins, path_names: { sign_in: 'login' , sign_out: 'logout', password: 'secret', confirmation: 'verification', unblock: 'unblock', registration: 'register' , sign_up: 'sign_up' }
+  devise_for :admins
 
   #Rutas para los controladores que van a mostrarse en la pagina
   resources :orderviews
   resources :dishviews
   resources :clientviews
   resources :stateviews
+  resources :chefviews
+  #resources :adminviews
 
   #Rutas para los controladores que son para el api
   scope module: :api do
+    resources :chefs
     resources :states
     resources :dishes
     resources :orders

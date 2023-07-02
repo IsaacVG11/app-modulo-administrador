@@ -1,0 +1,15 @@
+.notice
+  %p#notice= notice
+
+%section
+  %h3 Full name:
+  %p= @chef.full_name
+
+%section
+  %h3 Email:
+  %p= @chef.email
+
+%section.actions
+  = link_to 'Back', chefviews_path, class: 'btn btn-secondary'
+  |
+  = link_to 'Edit', edit_chefview_path(@chef), class: 'btn btn-primary'

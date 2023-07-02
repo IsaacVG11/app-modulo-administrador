@@ -1,9 +1,18 @@
 es:
+  errors:
+    messages:
+      not_saved: No se puedo guardar
   Controller:
     created: Creado exitosamente
     updated: Actualizado correctamente
     destroyed: Eliminado correctamente
   activerecord:
+    errors:
+      models:
+        admin:
+          attributes:
+            full_name:
+              blank: Nombre vacio
     attributes:
       User:
         user_states:

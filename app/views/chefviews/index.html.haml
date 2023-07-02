@@ -1,0 +1,23 @@
+%h1 Listing Chefs
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Full name
+      %th Email
+      %th
+      %th Actions
+      %th
+
+  %tbody
+    - @chefs.each do |chef|
+      %tr
+        %td= chef.full_name
+        %td= chef.email
+        %td= link_to 'Show', chefview_path(chef), class: 'btn btn-primary'
+        %td= link_to 'Edit', edit_chefview_path(chef), class: 'btn btn-primary'
+        %td= button_to 'Delete', chefview_path(chef), method: :delete, class: "btn btn-danger"
+
+%br
+
+= link_to 'New Chef', new_chefview_path, class: 'btn btn-primary mr-2'
