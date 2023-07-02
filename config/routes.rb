@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
 
   #Ruta para el devise
   #devise_for :user_logins, path_names: { sign_in: 'login' , sign_out: 'logout', password: 'secret', confirmation: 'verification', unblock: 'unblock', registration: 'register' , sign_up: 'sign_up' }
