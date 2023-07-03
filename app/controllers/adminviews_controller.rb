@@ -3,7 +3,11 @@ class AdminviewsController < ApplicationController
     before_action :set_admin, only: %i[ show edit update destroy ]
 
   def index
-    @admins = Admin.all
+    if params[:search]
+      @admins = Admin.where("full_name LIKE :search", search: "%#{params[:search]}%")
+    else
+      @admins = Admin.all
+    end
   end
 
   def show; end
@@ -44,6 +48,6 @@ class AdminviewsController < ApplicationController
   end
 
   def admin_params
-    params.require(:admin).permit(:email, :encrypted_password)
+    params.require(:admin).permit(:full_name, :email, :encrypted_password)
   end
 end

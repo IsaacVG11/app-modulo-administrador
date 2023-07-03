@@ -2,7 +2,11 @@ class ChefviewsController < ApplicationController
   before_action :set_chef, only: %i[ show edit update destroy ]
 
   def index
-    @chefs = Chef.all
+    if params[:search]
+      @chefs = Chef.where("full_name LIKE :search", search: "%#{params[:search]}%")
+    else
+      @chefs = Chef.all
+    end
   end
 
   def show; end

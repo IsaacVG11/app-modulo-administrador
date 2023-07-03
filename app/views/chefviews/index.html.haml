@@ -1,5 +1,12 @@
 %h1 Listing Chefs
 
+= form_tag chefviews_path, method: :get do
+  .form-group.row
+    .col-md-6
+      = text_field_tag :search, params[:search], placeholder: 'Search by chef name', class: 'form-control'
+    .col-md-6
+      = submit_tag 'Search', class: 'btn btn-primary'
+
 %table.table.table-striped
   %thead
     %tr

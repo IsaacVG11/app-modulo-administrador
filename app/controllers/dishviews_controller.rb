@@ -19,17 +19,14 @@ class DishviewsController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-  
-    if params[:dish][:dish_image].present?
-      @dish.dish_image = encode_image(params[:dish][:dish_image])
-    end
-  
+
     if @dish.save
       redirect_to dishview_path(@dish), notice: "Dish was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
+  
 
   def update
     if @dish.update(dish_params)
@@ -51,12 +48,7 @@ class DishviewsController < ApplicationController
   end
 
   def dish_params
-    params.require(:dish).permit(:dish_name, :description, :price, :dish_image, :dish_state)
-  end
-
-  def encode_image(image)
-    base64_image = Base64.encode64(image.read)
-    "data:#{image.content_type};base64,#{base64_image}"
+    params.require(:dish).permit(:dish_name, :description, :price, :dish_image, :dish_state, :image)
   end
 end
 

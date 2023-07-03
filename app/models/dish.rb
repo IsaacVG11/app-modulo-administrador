@@ -2,6 +2,7 @@ class Dish < ApplicationRecord
     has_many :dishxorders
     has_many :orders, through: :dishxorders
 
+    attr_accessor :image #Esto es una variable temporal para convertir a base 64
     validates :dish_name, presence: true
     validates :description, presence: true
     validates :price, presence: true

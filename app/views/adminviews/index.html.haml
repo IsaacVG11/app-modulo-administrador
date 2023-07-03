@@ -1,9 +1,16 @@
 %h1 Listing Administrators
 
+= form_tag adminviews_path, method: :get do
+  .form-group.row
+    .col-md-6
+      = text_field_tag :search, params[:search], placeholder: 'Search by name', class: 'form-control'
+    .col-md-6
+      = submit_tag 'Search', class: 'btn btn-primary'
+
 %table.table.table-striped
   %thead
     %tr
-      %th ID
+      %th Full Name
       %th Email
       %th
       %th Actions
@@ -12,7 +19,7 @@
   %tbody
     - @admins.each do |admin|
       %tr
-        %td= admin.id
+        %td= admin.full_name
         %td= admin.email
         %td= link_to 'Show', adminview_path(admin), class: 'btn btn-primary'
         %td= link_to 'Edit', edit_adminview_path(admin), class: 'btn btn-primary'
