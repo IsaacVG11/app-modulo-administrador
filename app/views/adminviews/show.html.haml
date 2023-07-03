@@ -1,0 +1,11 @@
+.notice
+  %p#notice= notice
+
+%section
+  %h3 Email:
+  %p= @admin.email
+
+%section.actions
+  = link_to 'Back', adminviews_path, class: 'btn btn-secondary'
+  |
+  = link_to 'Edit', edit_adminview_path(@admin), class: 'btn btn-primary'

@@ -1,1 +1,23 @@
-<h1>Bienvenidos al módulo administración</h1>
+%html
+  %head
+    %style
+      :css
+        .centered-image {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 100vh;
+        }
+        .centered-image img {
+          max-width: 70%;
+          max-height: 100%;
+          padding: 20px; /* Ajusta el espacio alrededor de la imagen */
+        }
+        .centered-image h1 {
+          text-align: center;
+        }
+        
+  %body
+    .centered-image
+      %h1 Módulo Administración
+      %img(src="https://pmcollege.edu.ni/wp-content/uploads/2021/12/Administracion-23-PNegocio.jpg" alt="Administración")

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   #Ruta para el devise
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations'
+  }
 
   #Rutas para los controladores que van a mostrarse en la pagina
   resources :orderviews
@@ -8,7 +11,7 @@ Rails.application.routes.draw do
   resources :clientviews
   resources :stateviews
   resources :chefviews
-  #resources :adminviews
+  resources :adminviews
 
   #Rutas para los controladores que son para el api
   scope module: :api do

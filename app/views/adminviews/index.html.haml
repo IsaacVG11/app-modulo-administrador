@@ -1,0 +1,23 @@
+%h1 Listing Administrators
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th Email
+      %th
+      %th Actions
+      %th
+
+  %tbody
+    - @admins.each do |admin|
+      %tr
+        %td= admin.id
+        %td= admin.email
+        %td= link_to 'Show', adminview_path(admin), class: 'btn btn-primary'
+        %td= link_to 'Edit', edit_adminview_path(admin), class: 'btn btn-primary'
+        %td= button_to 'Delete', adminview_path(admin), method: :delete, class: "btn btn-danger"
+
+%br
+
+= link_to 'New admin', new_adminview_path, class: 'btn btn-primary mr-2'
