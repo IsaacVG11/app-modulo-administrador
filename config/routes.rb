@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   #Rutas para los controladores que son para el api
   scope module: :api do
-    resources :chefs
+    resources :chefs do
+      post 'buscar_por_email', action: :buscar_por_email, on: :collection
+    end
     resources :states
     resources :dishes
     resources :orders

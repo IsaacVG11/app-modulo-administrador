@@ -50,6 +50,16 @@ module Api
       end
     end
 
+    def buscar_por_email
+      @chef = Chef.find_by(email: params[:chef][:email])
+    
+      if @chef
+        render 'api/chefs/show', status: :ok
+      else
+        render json: { error: 'Chef no encontrado' }, status: :not_found
+      end
+    end
+
     private
       def set_chef
         @chef = Chef.find(params[:id])
