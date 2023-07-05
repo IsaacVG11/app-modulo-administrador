@@ -17,7 +17,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<%= root_path %>">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-home"></i>
                 </div>
@@ -30,13 +30,16 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Clients -->
+            <!-- Nav Item - Managers -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<%= clientviews_path %>" >
-                    <i class="fas fa-user"></i><!-- Cambiar la imagen -->
-                    <span>Clients</span>
+                <a class="nav-link collapsed" href="<%= adminviews_path %>" >
+                    <i class="fas fa-user-tie"></i><!-- Cambiar la imagen -->
+                    <span>Managers</span>
                 </a>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Chefs -->
             <li class="nav-item">
@@ -46,13 +49,19 @@
                 </a>
             </li>
 
-            <!-- Nav Item - Managers -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Clients -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="<%= adminviews_path %>" >
-                    <i class="fas fa-user-tie"></i><!-- Cambiar la imagen -->
-                    <span>Admins</span>
+                <a class="nav-link collapsed" href="<%= clientviews_path %>" >
+                    <i class="fas fa-user"></i><!-- Cambiar la imagen -->
+                    <span>Clients</span>
                 </a>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Orders -->
             <li class="nav-item">
@@ -62,6 +71,9 @@
                 </a>
             </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
             <!-- Nav Item - Dishes -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= dishviews_path %>" >
@@ -69,6 +81,9 @@
                     <span>Dishes</span>
                 </a>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">

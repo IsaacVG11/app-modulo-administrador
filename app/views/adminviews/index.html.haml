@@ -1,11 +1,11 @@
-%h1 Listing Administrators
+%h1 Managers
 
 = form_tag adminviews_path, method: :get do
   .form-group.row
     .col-md-6
       = text_field_tag :search, params[:search], placeholder: 'Search by name', class: 'form-control'
     .col-md-6
-      = submit_tag 'Search', class: 'btn btn-primary'
+      = submit_tag 'Search', class: 'btn btn-dark'
 
 %table.table.table-striped
   %thead
@@ -21,10 +21,10 @@
       %tr
         %td= admin.full_name
         %td= admin.email
-        %td= link_to 'Show', adminview_path(admin), class: 'btn btn-primary'
-        %td= link_to 'Edit', edit_adminview_path(admin), class: 'btn btn-primary'
+        %td= link_to 'Show', adminview_path(admin), class: 'btn btn btn-primary'
+        %td= link_to 'Edit', edit_adminview_path(admin), class: 'btn btn-success'
         %td= button_to 'Delete', adminview_path(admin), method: :delete, class: "btn btn-danger"
 
 %br
 
-= link_to 'New admin', new_adminview_path, class: 'btn btn-primary mr-2'
+= link_to 'New', new_adminview_path, class: 'btn btn-outline-success'

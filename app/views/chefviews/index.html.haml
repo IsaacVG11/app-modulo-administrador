@@ -1,11 +1,11 @@
-%h1 Listing Chefs
+%h1 Chefs
 
 = form_tag chefviews_path, method: :get do
   .form-group.row
     .col-md-6
       = text_field_tag :search, params[:search], placeholder: 'Search by chef name', class: 'form-control'
     .col-md-6
-      = submit_tag 'Search', class: 'btn btn-primary'
+      = submit_tag 'Search', class: 'btn btn-dark'
 
 %table.table.table-striped
   %thead
@@ -22,9 +22,9 @@
         %td= chef.full_name
         %td= chef.email
         %td= link_to 'Show', chefview_path(chef), class: 'btn btn-primary'
-        %td= link_to 'Edit', edit_chefview_path(chef), class: 'btn btn-primary'
+        %td= link_to 'Edit', edit_chefview_path(chef), class: 'btn btn-success'
         %td= button_to 'Delete', chefview_path(chef), method: :delete, class: "btn btn-danger"
 
 %br
 
-= link_to 'New Chef', new_chefview_path, class: 'btn btn-primary mr-2'
+= link_to 'New', new_chefview_path, class: 'btn btn-outline-success'

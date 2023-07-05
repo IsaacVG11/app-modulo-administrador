@@ -1,19 +1,22 @@
 .notice
   %p#notice= notice
 
-%section
-  %h3 On Time:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center;' }
+  %h1 Time States
+
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 40px;' }
+  %h3 On time
   %p= @state.ontime
 
-%section
-  %h3 Over Time:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 20px;' }
+  %h3 Over time
   %p= @state.overtime
 
-%section
-  %h3 Late:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 20px;' }
+  %h3 Late
   %p= @state.late
 
-%section.actions
+%section.centered-section{ style: 'display: flex; justify-content: center; align-items: center; margin-top: 40px;' }
   = link_to 'Back', stateviews_path, class: 'btn btn-secondary'
   |
-  = link_to 'Edit', edit_stateview_path(@state), class: 'btn btn-primary'
+  = link_to 'Edit', edit_stateview_path(@state), class: 'btn btn-success'

@@ -1,24 +1,27 @@
 .notice
   %p#notice= notice
 
-%section
-  %h3 Client:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center;' }
+  %h1 Client
+
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 40px;' }
+  %h3 Full Name
   %p= @order.client.full_name
 
-%section
-  %h3 Order Time:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 20px;' }
+  %h3 Order Time
   %p= @order.order_time
 
-%section
-  %h3 Order Date:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 20px;' }
+  %h3 Order Date
   %p= @order.order_date
 
-%section
-  %h3 Order State:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 20px;' }
+  %h3 Order State
   %p= @order.order_state
 
-%section.actions
+%section.centered-section{ style: 'display: flex; justify-content: center; align-items: center; margin-top: 40px;' }
   = link_to 'Back', orderviews_path, class: 'btn btn-secondary'
   |
-  = link_to 'Edit', edit_orderview_path(@order), class: 'btn btn-primary'
+  = link_to 'Edit', edit_orderview_path(@order), class: 'btn btn-success'
   

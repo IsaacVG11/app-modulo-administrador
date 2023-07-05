@@ -9,33 +9,33 @@
             - @dish.errors.each do |error|
               %li= error.full_message
 
-  .form-group.mx-4
+  .form-group.text-center.mx-4.mb-3
     = f.label :dish_name, class: "form-label required"
-    .div.w-25 
+    .div.w-25.mx-auto 
       = f.text_field :dish_name, autofocus: true, class: "form-control", required: true
   
-  .form-group.mx-4
+  .form-group.text-center.mx-4.mb-3
     = f.label :description, class: "form-label required"
-    .div.w-25 
+    .div.w-25.mx-auto 
       = f.text_field :description, autofocus: true, class: "form-control", required: true
 
-  .form-group.mx-4
+  .form-group.text-center.mx-4.mb-3
     = f.label :price, class: "form-label required"
-    .div.w-25 
+    .div.w-25.mx-auto 
       = f.text_field :price, autofocus: true, class: "form-control", required: true
 
-  .form-group.mx-4
+  .form-group.text-center.mx-4.mb-3
     = f.label :image, class: "form-label required"
-    .div.w-25 
+    .div.w-25.mx-auto 
       = f.file_field :image, accept: 'image/*', required: true
 
-  .form-group.mx-4
+  .form-group.text-center.mx-4.mb-5
     = f.label :dish_state, class: "form-label required"
-    .div.w-25 
+    .div.w-25.mx-auto 
       = f.select(:dish_state, options_for_select(dish_states_helper, @dish.dish_state), {prompt: 'select'}, class: "form-control", required: true)
 
   .row.mt-4
-    .offset-3.col-3
-      = link_to 'back', dishviews_path, class: "btn btn-secondary btn-block"
-    .col-3
-      = button_tag 'save', class: "btn btn-outline-success btn-block"
+    .offset-3.col-3.text-center
+      = link_to 'Back', dishviews_path, class: "btn btn-secondary btn-block"
+    .col-3.text-center
+      = button_tag 'Save', class: "btn btn-outline-success btn-block"

@@ -14,22 +14,10 @@ es:
             full_name:
               blank: Nombre vacio
     attributes:
-      User:
-        user_states:
-          admin: Administrador
-          chef: Cocinero
       Dish:
         dish_states:
-        enable: Habilitar
-        disable: Deshabilitar
       Order:
         order_states:
-          onTime: A tiempo
-          overTime: Sobre tiempo
-          late: Tarde
-          canceled: Cancelado
-          delivered: Entregado
       Client:
         client_states:
-          enable: Habilitar
-          disable: Deshabilitar
+          

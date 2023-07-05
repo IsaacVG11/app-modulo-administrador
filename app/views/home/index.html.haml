@@ -4,20 +4,24 @@
       :css
         .centered-image {
           display: flex;
-          justify-content: flex-end;
-          align-items: center;
+          justify-content: center; /* Centra horizontalmente */
+          align-items: center; /* Centra verticalmente */
           height: 100vh;
+        }
+        .centered-image .content {
+          text-align: left; /* Alinea el contenido a la izquierda */
+          padding: 20px;
         }
         .centered-image img {
           max-width: 70%;
-          max-height: 100%;
+          max-height: 70%; /* Ajusta la altura máxima de la imagen */
           padding: 20px; /* Ajusta el espacio alrededor de la imagen */
-        }
-        .centered-image h1 {
-          text-align: center;
         }
         
   %body
     .centered-image
-      %h1 Módulo Administración
-      %img(src="https://pmcollege.edu.ni/wp-content/uploads/2021/12/Administracion-23-PNegocio.jpg" alt="Administración")
+      .content
+        %h1= @welcome_message 
+      %img(src="https://lettraining.com.au/wp-content/uploads/2022/02/manager.jpg" alt="Administración")
+
+

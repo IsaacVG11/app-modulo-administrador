@@ -9,13 +9,13 @@
             - @order.errors.each do |error|
               %li= error.full_message
 
-  .form-group.mx-4
+  .form-group.text-center.mx-4.mb-5
     = f.label :order_state, class: "form-label required"
-    .div.w-25 
+    .div.w-25.mx-auto 
       = f.select(:order_state, options_for_select(order_states_helper, @order.order_state), {prompt: 'select'}, class: "form-control")
 
   .row.mt-4
-    .offset-3.col-3
-      = link_to 'back', orderviews_path, class: "btn btn-secondary btn-block"
-    .col-3
-      = button_tag 'save', class: "btn btn-outline-success btn-block"
+    .offset-3.col-3.text-center
+      = link_to 'Back', orderviews_path, class: "btn btn-secondary btn-block"
+    .col-3.text-center
+      = button_tag 'Save', class: "btn btn-outline-success btn-block"

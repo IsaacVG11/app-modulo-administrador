@@ -1,15 +1,19 @@
 .notice
   %p#notice= notice
 
-%section
-  %h3 Full name:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center;' }
+  %h1 Manager
+
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 40px;' }
+  %h3 Full name
   %p= @admin.full_name
 
-%section
-  %h3 Email:
+%section.centered-section{ style: 'display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 20px;' }
+  %h3 Email
   %p= @admin.email
 
-%section.actions
+%section.centered-section{ style: 'display: flex; justify-content: center; align-items: center; margin-top: 40px;' }
   = link_to 'Back', adminviews_path, class: 'btn btn-secondary'
   |
-  = link_to 'Edit', edit_adminview_path(@admin), class: 'btn btn-primary'
+  = link_to 'Edit', edit_adminview_path(@admin), class: 'btn btn-success'
+
