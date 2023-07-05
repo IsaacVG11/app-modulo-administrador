@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Modulo Administración</title>
+    <title>Management Module</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,22 +17,15 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-home"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Administración</div>
+                <div class="sidebar-brand-text mx-3">Management</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i><!-- Cambiar la imagen -->
-                    <span>Available modules</span></a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -40,7 +33,7 @@
             <!-- Nav Item - Clients -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= clientviews_path %>" >
-                    <i class="fas fa-fw fa-cog"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-user"></i><!-- Cambiar la imagen -->
                     <span>Clients</span>
                 </a>
             </li>
@@ -48,23 +41,23 @@
             <!-- Nav Item - Chefs -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= chefviews_path %>" >
-                    <i class="fas fa-fw fa-cog"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-utensil-spoon"></i><!-- Cambiar la imagen -->
                     <span>Chefs</span>
                 </a>
             </li>
 
-            <!-- Nav Item - Chefs -->
+            <!-- Nav Item - Managers -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= adminviews_path %>" >
-                    <i class="fas fa-fw fa-cog"></i><!-- Cambiar la imagen -->
-                    <span>Administradores</span>
+                    <i class="fas fa-user-tie"></i><!-- Cambiar la imagen -->
+                    <span>Admins</span>
                 </a>
             </li>
 
             <!-- Nav Item - Orders -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= orderviews_path %>" >
-                    <i class="fas fa-fw fa-wrench"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-list"></i><!-- Cambiar la imagen -->
                     <span>Orders</span>
                 </a>
             </li>
@@ -72,7 +65,7 @@
             <!-- Nav Item - Dishes -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= dishviews_path %>" >
-                    <i class="fas fa-fw fa-folder"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-utensils"></i><!-- Cambiar la imagen -->
                     <span>Dishes</span>
                 </a>
             </li>
@@ -80,7 +73,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="<%= stateviews_path %>">
-                    <i class="fas fa-fw fa-chart-area"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-clock"></i><!-- Cambiar la imagen -->
                     <span>Time States</span></a>
             </li>
 
@@ -95,20 +88,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

@@ -12,26 +12,25 @@
   .form-group.mx-4
     = f.label :full_name, class: "form-label required"
     .div.w-25 
-      = f.text_field :full_name, autofocus: true, class: "form-control"
+      = f.text_field :full_name, autofocus: true, class: "form-control", required: true
 
   .form-group.mx-4
     = f.label :email, class: "form-label required"
     .div.w-25 
-      = f.email_field :email, autofocus: true, class: "form-control"
+      = f.email_field :email, autofocus: true, class: "form-control", required: true
 
   .form-group.mx-4
     = f.label :password, class: "form-label required"
     .div.w-25 
-      = f.password_field :password, autofocus: true, class: "form-control"
+      = f.password_field :password, autofocus: true, class: "form-control", required: true
 
   .form-group.mx-4
     = f.label :password_confirmation, class: "form-label required"
     .div.w-25 
-      = f.password_field :password_confirmation, autofocus: true, class: "form-control"
+      = f.password_field :password_confirmation, autofocus: true, class: "form-control", required: true
 
   .row.mt-4
     .offset-3.col-3
       = link_to 'back', adminviews_path, class: "btn btn-secondary btn-block"
     .col-3
       = button_tag 'save', class: "btn btn-outline-success btn-block"
-

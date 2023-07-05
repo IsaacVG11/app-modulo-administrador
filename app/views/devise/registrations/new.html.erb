@@ -1,34 +1,114 @@
-<h2>Sign up</h2>
+<style>
+  /* Estilos para el formulario de registro */
+  .signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  .signup-form h2 {
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
 
-  <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name, autofocus: true %>
-  </div>
+  .signup-form .field {
+    margin-bottom: 10px;
+    text-align: left;
+  }
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  .signup-form .field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  .signup-form .field input[type="text"],
+  .signup-form .field input[type="email"],
+  .signup-form .field input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  .signup-form .field em {
+    font-size: 12px;
+    color: #999;
+  }
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+  .signup-form .actions {
+    margin-top: 20px;
+  }
 
-<%= render "devise/shared/links" %>
+  .signup-form .actions input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1e90ff; /* Cambio de color a azul */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .signup-form .actions input[type="submit"]:hover {
+    background-color: #0066cc;
+  }
+
+  .signup-form .actions a {
+    color: #333;
+    text-decoration: none;
+  }
+</style>
+
+<div class="signup-form">
+  <h2><span style="color: #1e90ff;">Sign</span> up</h2>
+
+  <% if resource.present? %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :full_name %><br />
+        <%= f.text_field :full_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Error: Resource is nil or empty.</p>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
