@@ -3,7 +3,7 @@ class DishviewsController < ApplicationController
 
   def index
     if params[:search]
-      @dishes = Dish.where("dish_name LIKE :search OR description LIKE :search", search: "%#{params[:search]}%")
+      @dishes = Dish.where("lower(dish_name) LIKE lower(:search) OR lower(description) LIKE lower(:search)", search: "%#{params[:search]}%")
     else
       @dishes = Dish.all
     end

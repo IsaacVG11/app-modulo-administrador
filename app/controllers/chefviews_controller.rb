@@ -3,7 +3,7 @@ class ChefviewsController < ApplicationController
 
   def index
     if params[:search]
-      @chefs = Chef.where("full_name LIKE :search", search: "%#{params[:search]}%")
+      @chefs = Chef.where("lower(full_name) LIKE lower(:search)", search: "%#{params[:search]}%")
     else
       @chefs = Chef.all
     end

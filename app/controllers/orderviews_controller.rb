@@ -5,7 +5,7 @@ class OrderviewsController < ApplicationController
     @orders = Order.all
 
     if params[:client_name].present?
-      @orders = @orders.joins(:client).where("clients.full_name LIKE ?", "%#{params[:client_name]}%")
+      @orders = Order.joins(:client).where("lower(clients.full_name) LIKE lower(?)", "%#{params[:client_name]}%")
     end
   
     if params[:start_date].present? && params[:end_date].present?

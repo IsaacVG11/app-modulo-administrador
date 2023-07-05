@@ -6,7 +6,9 @@
       %th Full name
       %th Address
       %th Email
+      %th
       %th Actions
+      %th
 
   %tbody
     - @clients.each do |client|
@@ -17,5 +19,4 @@
         %td= client.client_state
         %td= link_to 'Show', clientview_path(client), class: 'btn btn-primary'
         %td= link_to 'Modify State', edit_clientview_path(client), class: 'btn btn-danger'
-
 %br

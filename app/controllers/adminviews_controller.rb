@@ -4,7 +4,7 @@ class AdminviewsController < ApplicationController
 
   def index
     if params[:search]
-      @admins = Admin.where("full_name LIKE :search", search: "%#{params[:search]}%")
+      @admins = Admin.where("lower(full_name) LIKE lower(:search)", search: "%#{params[:search]}%")
     else
       @admins = Admin.all
     end
