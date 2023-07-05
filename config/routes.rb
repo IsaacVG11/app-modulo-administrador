@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :clientviews
   resources :stateviews
   resources :chefviews
-  resources :adminviews
+  resources :adminviews, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   #Rutas para los controladores que son para el api
   scope module: :api do
