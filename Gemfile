@@ -14,6 +14,7 @@ gem "jquery-rails"
 gem "rack-cors"
 gem "sass-rails"
 gem "pg", "~> 1.1"
+gem 'actioncable'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"

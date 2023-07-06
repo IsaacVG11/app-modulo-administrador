@@ -19,6 +19,7 @@ module Api
       @order = Order.new(order_params)
     
       if @order.save
+        ActionCable.server.broadcast('orders_channel', order: @order)
         render 'api/orders/show', status: :created
       else
         render json: @order.errors, status: :unprocessable_entity 
