@@ -19,11 +19,13 @@ module Api
       @order = Order.new(order_params)
     
       if @order.save
-        ActionCable.server.broadcast('orders_channel', order: @order)
         render 'api/orders/show', status: :created
       else
         render json: @order.errors, status: :unprocessable_entity 
       end
+
+      #Notificamos que ya se creó una orden al forntend
+      ActionCable.server.broadcast('orders_channel', { order: @order })
     end
 
     #Se le agrega el respond_to format para cuando en la pagina hagamos editemos un 
