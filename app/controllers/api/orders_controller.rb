@@ -25,7 +25,7 @@ module Api
       end
 
       #Notificamos que ya se creó una orden al forntend
-      ActionCable.server.broadcast('orders_channel', { order: @order })
+      ActionCable.server.broadcast('OrdersChannel', { order: @order })
     end
 
     #Se le agrega el respond_to format para cuando en la pagina hagamos editemos un 

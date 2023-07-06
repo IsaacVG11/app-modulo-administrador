@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  #Action cable server
+  mount ActionCable.server => "/cable"
+
   #Ruta para el devise
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
