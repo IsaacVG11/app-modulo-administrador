@@ -4,7 +4,7 @@
       .card-body
         %div{style: 'color: red'}
           %h2
-            =t('application.can_not_be_saved')#Falta traduccion
+            = 'Could not edit client'
           %ul
             - @client.errors.each do |error|
               %li= error.full_message

@@ -23,14 +23,6 @@ class OrderviewsController < ApplicationController
 
   def edit; end
 
-  def update
-    if @order.update(order_params)
-        redirect_to orderview_url(@order), notice: 'Order was successfully updated' 
-    else
-      render :new, status: :unprocessable_entity 
-    end
-  end
-
   private
     def set_order
       @order = Order.find(params[:id])

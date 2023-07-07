@@ -24,12 +24,9 @@ module Api
         render json: @order.errors, status: :unprocessable_entity 
       end
 
-      #Notificamos que ya se creó una orden al forntend
       ActionCable.server.broadcast('OrdersChannel', { order: @order })
     end
 
-    #Se le agrega el respond_to format para cuando en la pagina hagamos editemos un 
-    #estado de la orden y este entre a este controlador y luego lo redireccione al show de pagina web
     def update
       respond_to do |format|
         if @order.update(order_params)

@@ -9,14 +9,6 @@ class StateviewsController < ApplicationController
 
     def edit; end
 
-    def update
-      if @state.update(state_params)
-        redirect_to stateview_path(@state), notice: "State was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
-    end
-
     private
       def set_state
         @state = State.find(params[:id])

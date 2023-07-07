@@ -25,9 +25,6 @@ module Api
       end
     end
 
-    # En este controlador api de clients se maneja recibiendo un formato ya sea html o json porque 
-    # a la hora de que en la web modificamos el valor de client state este se redirigía a este controlador 
-    # y entraba en error aunque si ejecutaba la acción update por lo tanto el render lo hice desde acá 
     def update
       respond_to do |format|
         if @client.update(client_params)

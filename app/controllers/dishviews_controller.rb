@@ -17,25 +17,6 @@ class DishviewsController < ApplicationController
 
   def edit; end
 
-  def create
-    @dish = Dish.new(dish_params)
-
-    if @dish.save
-      redirect_to dishview_path(@dish), notice: "Dish was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-  
-
-  def update
-    if @dish.update(dish_params)
-      redirect_to dishview_path(@dish), notice: "Dish was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
   def destroy
     @dish.destroy
     redirect_to dishviews_path, notice: "Dish was successfully destroyed."
@@ -48,7 +29,7 @@ class DishviewsController < ApplicationController
   end
 
   def dish_params
-    params.require(:dish).permit(:dish_name, :description, :price, :dish_image, :dish_state, :image)
+    params.require(:dish).permit(:dish_name, :description, :price, :dish_image, :dish_state)
   end
 end
 

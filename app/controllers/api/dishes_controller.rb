@@ -15,7 +15,6 @@ module Api
 
     def edit; end
 
-    #Se utiliza el respond_to format por los datos que se ingresan en la pagina web y la redireccion que toma cae en este controlador
     def create
       @dish = Dish.new(dish_params)
 
@@ -34,7 +33,6 @@ module Api
       end
     end
 
-    #Se utiliza el respond_to format por los datos que se ingresan en la pagina web y la redireccion que toma cae en este controlador
     def update
       if params[:dish][:image].present?
         @dish.dish_image = encode_image(params[:dish][:image])

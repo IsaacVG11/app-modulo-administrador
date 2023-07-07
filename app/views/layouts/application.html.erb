@@ -13,10 +13,10 @@
 
   <body id="page-top">
     <div id="wrapper">
-      <!-- Sidebar -->
+      
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
+            
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<%= root_path %>">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-home"></i>
@@ -24,96 +24,96 @@
                 <div class="sidebar-brand-text mx-3">Management</div>
             </a>
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider my-0">
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Managers -->
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= adminviews_path %>" >
-                    <i class="fas fa-user-tie"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-user-tie"></i>
                     <span>Managers</span>
                 </a>
             </li>
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Chefs -->
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= chefviews_path %>" >
-                    <i class="fas fa-utensil-spoon"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-utensil-spoon"></i>
                     <span>Chefs</span>
                 </a>
             </li>
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Clients -->
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= clientviews_path %>" >
-                    <i class="fas fa-user"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-user"></i>
                     <span>Clients</span>
                 </a>
             </li>
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Orders -->
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= orderviews_path %>" >
-                    <i class="fas fa-list"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-list"></i>
                     <span>Orders</span>
                 </a>
             </li>
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Dishes -->
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%= dishviews_path %>" >
-                    <i class="fas fa-utensils"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-utensils"></i>
                     <span>Dishes</span>
                 </a>
             </li>
 
-            <!-- Divider -->
+            
             <hr class="sidebar-divider">
 
-            <!-- Nav Item - Charts -->
+            
             <li class="nav-item">
                 <a class="nav-link" href="<%= stateviews_path %>">
-                    <i class="fas fa-clock"></i><!-- Cambiar la imagen -->
+                    <i class="fas fa-clock"></i>
                     <span>Time States</span></a>
             </li>
 
         </ul>
-        <!-- End of Sidebar -->
+        
         <div id="content-wrapper" class="d-flex flex-column">
           <div id="content">
-            <!-- Topbar -->
+            
               <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
+                    
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Navbar -->
+                    
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
+                            
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
@@ -131,7 +131,7 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Log Out Button -->
+                        
                         <li class="nav-item dropdown no-arrow">
                             <a>
                                 <%= link_to "Log Out", destroy_admin_session_path, data: {turbo_method: :delete}, class: "btn btn-danger btn-sm" %>
@@ -141,7 +141,7 @@
                     </ul>
 
               </nav>
-            <!-- End of Topbar -->
+            
             <div class="container-fluid">
               <%= yield %>
             </div>

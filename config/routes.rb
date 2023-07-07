@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
 
-  #Action cable server
+
   mount ActionCable.server => "/cable"
 
-  #Ruta para el devise
+
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
   }
 
-  #Rutas para los controladores que van a mostrarse en la pagina
+
   resources :orderviews
   resources :dishviews
   resources :clientviews
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :chefviews
   resources :adminviews, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
-  #Rutas para los controladores que son para el api
+
   scope module: :api do
     resources :chefs do
       post 'buscar_por_email', action: :buscar_por_email, on: :collection
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
      resources :dishxorders
   end
 
-  #Ruta a la pagina principal
+
   root "home#index"
 
 end

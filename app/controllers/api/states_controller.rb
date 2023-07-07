@@ -15,7 +15,6 @@ module Api
 
     def edit; end
 
-    #El solamente se va a utilizar para el postman para ingresar los estado iniciales
     def create
       @state = State.new(state_params)
       if @state.save
@@ -25,8 +24,6 @@ module Api
       end
     end
 
-    # Hay que dejarlo con el respond_to para cuando actualice los minutos de un estado 
-    # y luego cambiar la redireccion al show del controlador de web
     def update
       respond_to do |format|
         if @state.update(state_params)

@@ -18,19 +18,9 @@ class AdminviewsController < ApplicationController
 
   def edit; end
 
-  def create
-    @admin = Admin.new(admin_params)
-
-    if @admin.save
-      redirect_to adminview_path(@admin), notice: 'Administrador creado exitosamente.'
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
   def update
     if @admin.update(admin_params)
-      redirect_to adminview_path(@admin), notice: 'Administrador actualizado exitosamente.'
+      redirect_to adminview_path(@admin), notice: 'Manager was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -38,7 +28,7 @@ class AdminviewsController < ApplicationController
 
   def destroy
     @admin.destroy
-    redirect_to adminviews_path, notice: 'Administrador eliminado exitosamente.'
+    redirect_to adminviews_path
   end
 
   private

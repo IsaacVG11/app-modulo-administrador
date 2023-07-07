@@ -9,13 +9,6 @@ class ClientviewsController < ApplicationController
 
   def edit; end
   
-  def update
-    if @client.update(client_params)
-      redirect_to clientview_path(@client)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
   
   private
 

@@ -20,7 +20,7 @@ module Api
 
       respond_to do |format|
         if @chef.save
-          format.html { redirect_to chefviews_path(@chef), notice: "Chef was successfully created." } #Hay que redireccionar a la vista
+          format.html { redirect_to chefview_path(@chef), notice: "Chef was successfully created." }
           format.json { render 'api/chefs/show', status: :created }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -32,7 +32,7 @@ module Api
     def update
       respond_to do |format|
         if @chef.update(chef_params)
-          format.html { redirect_to chefview_path(@chef), notice: "Chef was successfully updated." } #Hay que redireccionar a la vista
+          format.html { redirect_to chefview_path(@chef), notice: "Chef was successfully updated." } 
           format.json { render 'api/chefs/show', status: :ok }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ module Api
       @chef.destroy
 
       respond_to do |format|
-        format.html { redirect_to chefviews_path, notice: "Chef was successfully destroyed." }#Hay que redireccionar a la vista
+        format.html { redirect_to chefviews_path }
         format.json { render 'api/chefs/show' }
       end
     end
