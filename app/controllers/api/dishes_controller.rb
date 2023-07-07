@@ -36,6 +36,10 @@ module Api
 
     #Se utiliza el respond_to format por los datos que se ingresan en la pagina web y la redireccion que toma cae en este controlador
     def update
+      if params[:dish][:image].present?
+        @dish.dish_image = encode_image(params[:dish][:image])
+      end
+      
       respond_to do |format|
         if @dish.update(dish_params)
           format.html { redirect_to dishview_path(@dish), notice: "Dish was successfully updated." }
